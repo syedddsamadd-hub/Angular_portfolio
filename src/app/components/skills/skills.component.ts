@@ -9,7 +9,7 @@ import {
 } from '../../services/scroll-animation.service';
 
 export type SkillLevel =
-  'Expert' | 'Advanced' | 'Intermediate';
+  'Expert' | 'Advanced' | 'Intermediate'|'Begginer';
 
 export interface Skill {
   name: string;
@@ -40,12 +40,10 @@ export class SkillsComponent implements OnInit,
     { name:'React.js',      cat:'Frontend', icon:'fab fa-react',       level:'Intermediate' },
     { name:'PHP 8',         cat:'Backend',  icon:'fab fa-php',         level:'Expert' },
     { name:'MySQL',         cat:'Backend',  icon:'fas fa-database',    level:'Advanced' },
-    { name:'Node.js',       cat:'Backend',  icon:'fab fa-node-js',     level:'Intermediate' },
-    { name:'REST API',      cat:'Backend',  icon:'fas fa-code',        level:'Advanced' },
+    { name:'ASP.NET CORE (MVC)',       cat:'Backend',  icon:'fab fa-node-js',     level:'Intermediate' },
+    { name:'Laravel',      cat:'Backend',  icon:'fas fa-code',        level:'Advanced' },
     { name:'Git & GitHub',  cat:'Tools',    icon:'fab fa-git-alt',     level:'Expert' },
-    { name:'Figma',         cat:'Tools',    icon:'fab fa-figma',       level:'Intermediate' },
-    { name:'VS Code',       cat:'Tools',    icon:'fas fa-code',        level:'Expert' },
-    { name:'XAMPP',         cat:'Tools',    icon:'fas fa-server',      level:'Expert' },
+    { name:'Canva',         cat:'Tools',    icon:'fab fa-figma',       level:'Intermediate' }
   ];
 
   categories = ['all', 'Frontend', 'Backend', 'Tools'];

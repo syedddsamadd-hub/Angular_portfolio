@@ -28,8 +28,8 @@ export class HeroComponent implements OnInit,
   typingTexts = [
     'Web Developer',
     'PHP Developer',
-    'UI/UX Enthusiast',
     'Problem Solver',
+    'ASP.NET Core MVC DEVELOPER',
     'Full Stack Developer'
   ];
   displayText = '';
