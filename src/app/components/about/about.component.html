@@ -1,0 +1,78 @@
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+
+      <!-- Image -->
+      <div class="about-img-wrap">
+        <img *ngIf="profile?.image"
+             [src]="profile?.image"
+             [alt]="profile?.name"
+             class="about-img">
+        <div class="img-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="about-img-overlay"></div>
+        <div class="about-accent-card">
+          <div class="accent-num">
+            {{ profile?.expYears }}+
+          </div>
+          <div class="accent-label">
+            Years of Experience
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content">
+        <span class="section-badge">About Me</span>
+        <h2 class="section-title">
+          Crafting
+          <span class="lime-text">
+            Digital Experiences
+          </span>
+          That Matter
+        </h2>
+        <p class="about-bio">{{ profile?.bioExtended }}</p>
+
+        <div class="about-info-grid">
+          <div class="about-info-item">
+            <i class="fas fa-briefcase"></i>
+            <span>{{ profile?.title }}</span>
+          </div>
+          <div class="about-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{{ profile?.location }}</span>
+          </div>
+          <div class="about-info-item">
+            <i class="fas fa-envelope"></i>
+            <span>{{ profile?.email }}</span>
+          </div>
+          <div class="about-info-item">
+            <i class="fas fa-phone"></i>
+            <span>{{ profile?.phone }}</span>
+          </div>
+        </div>
+
+        <div class="about-socials">
+          <button class="social-btn"
+            (click)="openLink(profile?.github)">
+            <i class="fab fa-github"></i>
+          </button>
+          <button class="social-btn"
+            (click)="openLink(profile?.linkedin)">
+            <i class="fab fa-linkedin-in"></i>
+          </button>
+          <button class="social-btn"
+            (click)="openLink(profile?.twitter)">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <a class="social-btn"
+            [href]="'mailto:' + profile?.email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

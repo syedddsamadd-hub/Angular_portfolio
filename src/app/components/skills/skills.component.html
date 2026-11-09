@@ -1,0 +1,61 @@
+<section id="skills">
+  <div class="section-inner">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-badge">My Skills</span>
+      <h2 class="section-title">
+        Technical <span class="lime-text">Expertise</span>
+      </h2>
+      <p class="section-desc">
+        Technologies I have mastered across the full stack.
+      </p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="skills-tabs">
+      <button
+        *ngFor="let cat of categories"
+        type="button"
+        class="tab-btn"
+        [class.active]="activeCategory === cat"
+        (click)="filterSkills(cat)">
+        {{ cat === 'all' ? 'All' : cat }}
+      </button>
+    </div>
+
+    <!-- Columns: Frontend | Backend | Tools -->
+    <div
+      id="skills-grid"
+      class="skills-grid"
+      [class.fading]="isFiltering"
+      [class.single]="columns.length === 1">
+
+      <div
+        class="skills-col-wrap"
+        *ngFor="let col of columns; trackBy: trackByCol">
+
+        <div class="skills-col">
+          <h3 class="col-title">{{ col.cat }}</h3>
+
+          <ul class="col-list">
+            <li
+              class="skill-item"
+              *ngFor="let skill of col.items; trackBy: trackBySkill">
+              <i class="skill-icon" [ngClass]="skill.icon"
+                 aria-hidden="true"></i>
+              <span class="skill-name">{{ skill.name }}</span>
+              <span
+                class="level-badge"
+                [ngClass]="'level-' + skill.level.toLowerCase()">
+                {{ skill.level }}
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

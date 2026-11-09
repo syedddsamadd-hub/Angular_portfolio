@@ -1,0 +1,121 @@
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-badge">Get In Touch</span>
+      <h2 class="section-title">
+        Let's <span class="lime-text">Work Together</span>
+      </h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info">
+        <h3 class="contact-info-title">
+          Have a project in mind?
+        </h3>
+        <p class="contact-info-desc">
+          My inbox is always open. Whether you need
+          a website or just want to say hello!
+        </p>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              syedddsamadd&#64;gmail.com
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">03160260319</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">
+              Baldia Town, Karachi, Pakistan
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap">
+        <form (ngSubmit)="submitForm()">
+          <!-- Honeypot field for bots -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hp-field"
+            tabindex="-1"
+            autocomplete="off"
+            [(ngModel)]="botcheck">
+
+          <div class="form-row">
+            <div class="f-group">
+              <label class="f-label">Your Name</label>
+              <input
+                type="text" class="f-input"
+                [(ngModel)]="formData.name"
+                name="name"
+                placeholder="John Doe">
+            </div>
+            <div class="f-group">
+              <label class="f-label">Email</label>
+              <input
+                type="email" class="f-input"
+                [(ngModel)]="formData.email"
+                name="email"
+                placeholder="john@example.com">
+            </div>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Subject</label>
+            <input
+              type="text" class="f-input"
+              [(ngModel)]="formData.subject"
+              name="subject"
+              placeholder="Project inquiry...">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Message</label>
+            <textarea
+              class="f-input f-textarea"
+              [(ngModel)]="formData.message"
+              name="message"
+              placeholder="Tell me about your project...">
+            </textarea>
+          </div>
+          <button type="submit"
+                  class="btn-lime btn-block"
+                  [disabled]="isSubmitting">
+            <i class="fas fa-paper-plane"></i>
+            {{ isSubmitting ? 'Sending…' : 'Send Message' }}
+          </button>
+          <div
+            *ngIf="formMsg"
+            class="form-msg"
+            role="status"
+            aria-live="polite"
+            [class.success]="formMsgType==='success'"
+            [class.error]="formMsgType==='error'">
+            {{ formMsg }}
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

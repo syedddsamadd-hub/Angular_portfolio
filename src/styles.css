@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-primary:    #23262F;
+  --bg-secondary:  #1a1d24;
+  --bg-card:       rgba(255,255,255,0.04);
+  --lime:          #B6FF2E;
+  --lime-dark:     #8fcc1a;
+  --lime-glow:     rgba(182,255,46,0.15);
+  --lime-border:   rgba(182,255,46,0.25);
+  --text-primary:  #f0f4ff;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+  --border:        rgba(255,255,255,0.08);
+  --shadow:        0 8px 32px rgba(0,0,0,0.4);
+  --glow:          0 0 40px rgba(182,255,46,0.2);
+  --font-head:     'Syne', sans-serif;
+  --font-body:     'Space Grotesk', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+  --radius:        16px;
+  --radius-sm:     8px;
+  --radius-pill:   99px;
+  --transition:    0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+::selection {
+  background: rgba(182,255,46,0.25);
+  color: var(--lime);
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb {
+  background: var(--lime);
+  border-radius: 99px;
+}
+
+/* Lenis smooth scrolling */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Reduced motion: no CSS animation or transition */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .cursor-blink { animation: none; }
+}
+
+/* Section Commons */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: rgba(182,255,46,0.08);
+  border: 1px solid var(--lime-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lime);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.lime-text { color: var(--lime); }
+.section-desc {
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.8;
+}
+.section-header { margin-bottom: 3rem; }
+
+/* Buttons */
+.btn-lime {
+  padding: 0.85rem 2rem;
+  background: var(--lime);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: #23262F;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(182,255,46,0.35);
+  font-family: var(--font-body);
+}
+.btn-lime:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(182,255,46,0.55);
+}
+.btn-outline-lime {
+  padding: 0.85rem 2rem;
+  background: transparent;
+  border: 1.5px solid var(--lime-border);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.btn-outline-lime:hover {
+  border-color: var(--lime);
+  background: rgba(182,255,46,0.08);
+  transform: translateY(-3px);
+  color: var(--lime);
+}

@@ -1,0 +1,23 @@
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-badge">Services</span>
+      <h2 class="section-title">
+        What I <span class="lime-text">Offer</span>
+      </h2>
+    </div>
+
+    <!-- Services Grid — Loop from array -->
+    <div class="services-grid">
+      <div
+        *ngFor="let srv of services"
+        class="srv-card">
+        <div class="srv-icon">
+          <i [class]="srv.icon"></i>
+        </div>
+        <div class="srv-title">{{ srv.title }}</div>
+        <div class="srv-desc">{{ srv.desc }}</div>
+      </div>
+    </div>
+  </div>
+</section>

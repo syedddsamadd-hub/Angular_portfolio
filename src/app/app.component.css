@@ -1,0 +1,26 @@
+/* Scroll Progress */
+#scroll-progress {
+  position: fixed; top: 0; left: 0;
+  z-index: 9999; height: 3px; width: 0%;
+  background: linear-gradient(90deg, #B6FF2E, #8fcc1a);
+  transition: width 0.1s linear;
+}
+
+/* Back to Top */
+#back-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  z-index: 5000; width: 44px; height: 44px;
+  background: var(--lime); border: none;
+  border-radius: 50%; color: #23262F;
+  font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center;
+  justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(182,255,46,0.4);
+}
+#back-top.show { opacity: 1; visibility: visible; }
+#back-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(182,255,46,0.6);
+}

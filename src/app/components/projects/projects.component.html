@@ -1,0 +1,88 @@
+<section id="projects">
+  <div class="projects-pin">
+
+    <div class="projects-head">
+      <div class="section-header">
+        <span class="section-badge">Portfolio</span>
+        <h2 class="section-title">
+          Featured <span class="lime-text">Projects</span>
+        </h2>
+        <p class="section-desc">
+          A selection of my best work across web development.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="proj-filters">
+        <button
+          *ngFor="let cat of categories"
+          class="filter-btn"
+          [class.active]="activeCategory === cat"
+          (click)="filterProjects(cat)">
+          {{ cat === 'all' ? 'All' : cat }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Horizontal track — pinned and scrubbed on desktop,
+         native swipe carousel on tablet/mobile -->
+    <div class="projects-viewport">
+      <div class="projects-track">
+        <div
+          *ngFor="let proj of filteredProjects"
+          class="proj-card"
+          #projCard
+          (mousemove)="onMouseMove($event, projCard)"
+          (mouseleave)="onMouseLeave(projCard)">
+
+          <!-- Image -->
+          <div class="proj-img-wrap">
+            <img *ngIf="proj.img"
+                 [src]="proj.img"
+                 [attr.srcset]="srcset(proj)"
+                 sizes="(max-width: 560px) 82vw,
+                        (max-width: 1023px) 78vw,
+                        440px"
+                 [alt]="proj.title"
+                 loading="lazy"
+                 decoding="async">
+            <div *ngIf="!proj.img" class="proj-placeholder">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="proj-overlay">
+              <button
+                *ngIf="proj.live !== '#'"
+                class="proj-link-btn"
+                (click)="openLink(proj.live)">
+                <i class="fas fa-arrow-up-right-from-square">
+                </i> Live
+              </button>
+              <button
+                *ngIf="proj.github !== '#'"
+                class="proj-link-btn outline"
+                (click)="openLink(proj.github)">
+                <i class="fab fa-github"></i> Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="proj-body">
+            <div class="proj-cat">{{ proj.cat }}</div>
+            <div class="proj-title">{{ proj.title }}</div>
+            <div class="proj-desc">{{ proj.desc }}</div>
+            <div class="proj-tech">
+              <span
+                *ngFor="let t of proj.tech"
+                class="tech-tag">
+                {{ t }}
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<nav [class.scrolled]="isScrolled">
+  <a class="nav-logo" href="#hero"
+     (click)="scrollTo($event, '#hero')">
+    AS.
+  </a>
+
+  <ul class="nav-links" [class.open]="isMenuOpen">
+    <li *ngFor="let link of navLinks">
+      <a [href]="link.href"
+         [class.active]="isActive(link.href)"
+         (click)="scrollTo($event, link.href)">
+        {{ link.label }}
+      </a>
+    </li>
+  </ul>
+
+  <a class="nav-cta" href="#contact"
+     (click)="scrollTo($event, '#contact')">
+    Hire Me
+  </a>
+
+  <button class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          [attr.aria-expanded]="isMenuOpen"
+          (click)="toggleMenu()"
+          [class.open]="isMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>

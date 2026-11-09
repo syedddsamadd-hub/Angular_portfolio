@@ -1,0 +1,80 @@
+<section id="hero">
+  <!-- Background Orbs -->
+  <div class="hero-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="hero-grid">
+
+    <!-- LEFT: Text Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-mask">
+          <span class="line">
+            <span class="word">Hi,</span>
+            <span class="word">I'm</span>
+          </span>
+        </span>
+        <span class="line-mask">
+          <span class="line hero-name">
+            <span class="word">Abdul</span>
+            <span class="word">Samad</span>
+          </span>
+        </span>
+      </h1>
+
+      <div class="hero-typing">
+        <span class="typed">{{ displayText }}</span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-bio">
+        Full Stack Web Developer with a passion for
+        building fast, beautiful, and user-friendly
+        web applications. I turn ideas into reality
+        through clean code and creative design.
+      </p>
+
+      <div class="hero-btns">
+        <button class="btn-lime"
+                (click)="scrollTo('contact')">
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </button>
+        <button class="btn-outline-lime"
+                (click)="scrollTo('projects')">
+          <i class="fas fa-eye"></i> View Work
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Years Exp.</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Clients</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Three.js Canvas -->
+    <div class="hero-canvas-wrap">
+      <canvas #heroCanvas></canvas>
+    </div>
+
+  </div>
+</section>
